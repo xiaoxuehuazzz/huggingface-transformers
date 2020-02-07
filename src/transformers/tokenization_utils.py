@@ -1688,6 +1688,8 @@ class PreTrainedTokenizerFast(PreTrainedTokenizer):
                 stack = tf.concat(stack, axis=0)
             elif return_tensors == "pt":
                 stack = torch.cat(stack, dim=0)
+            elif not return_tensors and len(stack) == 1:
+                stack = stack[0]
 
             sanitized[key] = stack
         return sanitized
@@ -1724,7 +1726,7 @@ class PreTrainedTokenizerFast(PreTrainedTokenizer):
             **kwargs,
         )
 
-        # return {key: value[0] for key, value in batched_output.items()}
+        return {key: value[0] for key, value in batched_output.items()}
 
     def decode(self, token_ids, skip_special_tokens=False, clean_up_tokenization_spaces=True):
         text = self.tokenizer.decode(token_ids, skip_special_tokens)
