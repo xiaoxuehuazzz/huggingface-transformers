@@ -1676,8 +1676,6 @@ class PreTrainedTokenizerFast(PreTrainedTokenizer):
                 return_overflowing_tokens,
                 return_special_tokens_mask,
                 return_offsets_mapping,
-                self.pad_token_id,
-                max_length,
             )
             for encoding in tokens
         ]
