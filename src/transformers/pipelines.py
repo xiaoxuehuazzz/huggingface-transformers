@@ -979,7 +979,7 @@ SUPPORTED_TASKS = {
         "default": {
             "model": {"pt": "distilbert-base-cased-distilled-squad", "tf": "distilbert-base-cased-distilled-squad"},
             "config": None,
-            "tokenizer": ("distilbert-base-uncased", {"use_fast": False})
+            "tokenizer": ("distilbert-base-uncased", {"use_fast": False}),
         },
     },
     "fill-mask": {
@@ -989,7 +989,7 @@ SUPPORTED_TASKS = {
         "default": {
             "model": {"pt": "distilroberta-base", "tf": "distilroberta-base"},
             "config": None,
-            "tokenizer": ("distilroberta-base", {"use_fast": False})
+            "tokenizer": ("distilroberta-base", {"use_fast": False}),
         },
     },
 }
